@@ -1,0 +1,19 @@
+/*
+Write a boolean expression that checks for given integer if it can be divided (without remainder)
+by 7 and 5 in the same time.
+ */
+
+using System;
+
+class BoolDivideSevenAndFive
+{
+    static void Main()
+    {
+        Console.WriteLine("Napishete edno cqlo chislo:");
+        string a=Console.ReadLine();
+        int b = int.Parse(a);
+        bool divider = (b % 5 == 0) && (b % 7 == 0);
+
+        Console.WriteLine("divider={0}", divider);
+    }
+}
