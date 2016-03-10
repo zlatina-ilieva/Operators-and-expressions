@@ -1,0 +1,70 @@
+/*
+Write a program that exchanges bits 3, 4 and 5 with bits 24, 25 and 26 of given 32-bit unsigned integer.
+ */
+
+using System;
+
+class Exchangebits345
+{
+    static void Main()
+    {
+        uint n;
+        Console.Write("Vyvedete 32-bitovo chislo: ");
+        n = uint.Parse(Console.ReadLine());
+        int p, firstBits, secondBits;
+        uint mask, nAndMask;
+        string binary = Convert.ToString(n, 2);
+        Console.WriteLine("Chisloto: {0}", n);
+        Console.WriteLine("V dvoichen kod e: {0}", binary.PadLeft(32, '0'));
+        int j, secondPosition;
+        for (p = 3; p < 6; p++)
+        {
+            mask = (uint)(1 << p);
+            nAndMask = n & mask;
+            firstBits = (int)nAndMask >> p;
+            Console.WriteLine("Bita na poziciq {0} e {1}", p, firstBits);
+            secondPosition = p + 21;
+            mask = (uint)(1 << secondPosition);
+            nAndMask = n & mask;
+            secondBits = (int)nAndMask >> secondPosition;
+            Console.WriteLine("Bita na poziciq {0} e {1}", secondPosition, secondBits);
+            Console.WriteLine();
+            if (firstBits == 0)
+            {
+                if (secondBits != 0)
+                {
+                    mask = (uint)~(1 << secondPosition);
+                    n = n & mask;
+                }
+            }
+            else
+            {
+                if (secondBits != 1)
+                {
+                    mask = (uint)(1 << secondPosition);
+                    n = n | mask;
+                }
+            }
+            Console.WriteLine("result: " + n);
+            if (secondBits == 0)
+            {
+                if (firstBits != 0)
+                {
+                    mask = (uint)~(1 << p);
+                    n = n & mask;
+                }
+            }
+            else
+            {
+                if (firstBits != 1)
+                {
+                    mask = (uint)(1 << p);
+                    n = n | mask;
+                }
+            }
+                
+        }
+        Console.WriteLine("Pyrvonachalno chislo: {0}", binary.PadLeft(32, '0'));
+        Console.WriteLine("Chislo sled razmqna na bitovete: {0}", Convert.ToString(n, 2).PadLeft(32, '0'));
+    }
+}
