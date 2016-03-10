@@ -1,0 +1,18 @@
+/*
+Write an expression that calculates rectangle’s area by given width and height.
+ */
+
+using System;
+
+class RectanglesArea
+{
+    static void Main()
+    {
+        Console.WriteLine("Zadaite dyljina na pravoygylnika:");
+        int width = int.Parse(Console.ReadLine());
+        Console.WriteLine("Zadaite shirina na pravoygylnika:");
+        int height = int.Parse(Console.ReadLine());
+        int s = width * height;
+        Console.WriteLine("Liceto na pravoygylnika e {0}", s);
+    }
+}
