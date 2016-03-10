@@ -1,0 +1,15 @@
+/*
+Write an expression that checks if given integer is odd or even.
+ */
+
+using System;
+
+class ExpressionsOddOrEven
+{
+    static void Main()
+    {
+        int a = (100-50) / 2 + 5;
+        if (a % 2 == 0) Console.WriteLine("The expression is odd");
+        else Console.WriteLine("The expression is even");
+    }
+}
