@@ -1,0 +1,25 @@
+/*
+* Write a program that exchanges bits {p, p+1, …, p+k-1) with bits {q, q+1, …, q+k-1} 
+* of given 32-bit unsigned integer.
+ */
+
+using System;
+
+class ExchangeBitsPQ
+{
+    static void Main()
+    {
+        Console.Write("Vyvedi chislo: ");
+        uint n = UInt32.Parse(Console.ReadLine());
+        Console.Write("Vyvedete p: ");
+        byte p = Byte.Parse(Console.ReadLine());
+        Console.Write("Vyvedete q: ");
+        byte q = Byte.Parse(Console.ReadLine());
+        Console.Write("Vyvedete kolko bita da se smenqt: ");
+        byte k = Byte.Parse(Console.ReadLine());
+        uint mask = (uint)(Math.Pow(2, k) - 1);
+        Console.WriteLine(((~(mask << q) & ~(mask << p)) & n) 
+                            | (((n & (mask << q)) >> (q - p)) 
+                            | ((n & (mask << p)) << (q - p))));   
+    }
+}
