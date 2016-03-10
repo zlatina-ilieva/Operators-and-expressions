@@ -1,0 +1,18 @@
+/* 
+Write an expression that checks if given point (x,  y) is within a circle K(O, 5)
+*/
+
+using System;
+
+class PointWithinCircle
+{
+    static void Main()
+    {
+        Console.WriteLine("Zadaite x koordinata na tochkata:");
+        int xi = int.Parse(Console.ReadLine());
+        Console.WriteLine("Zadaite y koordinata na tochkata:");
+        int yi = int.Parse(Console.ReadLine());
+        if ((xi * xi + yi * yi) <= 25) Console.WriteLine("Tochkata e v okryjnostta");
+        else Console.WriteLine("Tochkata e izvyn okryjnostta");
+    }
+}
