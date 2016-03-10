@@ -1,0 +1,20 @@
+/*
+Write an expression that checks for given integer if its third digit (right-to-left) is 7. 
+E. g. 1732 -> true.
+ */
+
+using System;
+
+class ThirdDigitSeven
+{
+    static void Main()
+    {
+        Console.WriteLine("Vyvedete chislo s tri ili poveche cifri:");
+        string a = Console.ReadLine();
+        int b=(a.Length)-3;
+        bool flag;
+        if (a[b] == '7') flag = true;
+        else flag = false;
+        Console.WriteLine("Tvyrdenieto, che tretiq simvol ot dqsno na lqvo e 7, e:{0}", flag);
+    }
+}
