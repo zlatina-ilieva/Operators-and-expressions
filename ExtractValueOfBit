@@ -1,0 +1,22 @@
+/*
+Write a boolean expression that returns if the bit at position p (counting from 0) in a 
+given integer number v has value of 1. Example: v=5; p=1 -> false.
+ */
+
+using System;
+
+class ExtractValueOfBit
+{
+    static void Main()
+    {
+        Console.WriteLine("Vyvedete poziciq:");
+        int b = int.Parse(Console.ReadLine());
+        Console.WriteLine("Vyvedete chislo:");
+        int i = int.Parse(Console.ReadLine());
+        string binary = Convert.ToString(i, 2);
+        int mask = 1 << b;
+        int nAndMask = i & mask;
+        int bit = nAndMask >> b;  
+        Console.WriteLine("Na poziciq {0} v chisloto {1} ({2}) se namira: {3}",b,i,binary,bit); 
+    }
+}
